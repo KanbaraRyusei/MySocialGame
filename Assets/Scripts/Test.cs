@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayFab;
+using PlayFab.ClientModels;
 
 public class Test : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    async void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayFabSettings.staticSettings.TitleId = "1936E";
+        var request = new LoginWithCustomIDRequest
+        {
+            CustomId = "GettingStartedGuide",
+            CreateAccount = true
+        };
+        var result = await PlayFabClientAPI.LoginWithCustomIDAsync(request);
+        var message = result.Error is null ? $"Login success! PlayFabID:{result.Result.PlayFabId}" : result.Error.GenerateErrorReport();
+        Debug.Log(message);
     }
 }
