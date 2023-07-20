@@ -7,12 +7,20 @@ using Cysharp.Threading.Tasks;
 
 public class Test : MonoBehaviour
 {
+    private PlayfabLogin _pl;
+
     async void Start()
     {
-        await CustomIDLogin();
+        _pl = GetComponent<PlayfabLogin>();
+
+        if (await CustomIDLogin())
+        {
+            await _pl.GetUserData();
+            await _pl.UpdateUserData();
+        }
     }
 
-    private async UniTask CustomIDLogin()
+    private async UniTask<bool> CustomIDLogin()
     {
         PlayFabSettings.staticSettings.TitleId = "1936E";
         var request = new LoginWithCustomIDRequest
@@ -24,5 +32,6 @@ public class Test : MonoBehaviour
         var log = result.Error is null ? result.Result.PlayFabId
             : result.Error.ErrorMessage;
         Debug.Log(log);
+        return result.Error is null;
     }
 }
