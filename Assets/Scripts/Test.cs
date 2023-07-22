@@ -13,22 +13,29 @@ public class Test : MonoBehaviour
     {
         _pl = GetComponent<PlayfabLogin>();
 
-        if (await CustomIDLogin())
+        if (await CustomIDLogin()) // ログインできたら
         {
+            // ユーザーデータを取得
             await _pl.GetUserData();
+            // ユーザーデータを更新
             await _pl.UpdateUserData();
         }
     }
 
     private async UniTask<bool> CustomIDLogin()
     {
+        // タイトルIDを入れる
         PlayFabSettings.staticSettings.TitleId = "1936E";
         var request = new LoginWithCustomIDRequest
         {
+            // カスタムIDを設定
             CustomId = "GettingStartedGuide",
             CreateAccount = true
         };
+        // 非同期でログイン
         var result = await PlayFabClientAPI.LoginWithCustomIDAsync(request);
+
+        // ログインしたかログを出す
         var log = result.Error is null ? result.Result.PlayFabId
             : result.Error.ErrorMessage;
         Debug.Log(log);
