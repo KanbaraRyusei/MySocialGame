@@ -7,7 +7,7 @@ using Cysharp.Threading.Tasks;
 
 public class PlayfabLogin : MonoBehaviour
 {
-    public async UniTask GetUserData()
+    public async UniTask GetUserData()// ユーザーデータを取得
     {
         var request = new GetUserDataRequest();
         var result = await PlayFabClientAPI.GetUserDataAsync(request);
@@ -16,7 +16,7 @@ public class PlayfabLogin : MonoBehaviour
         Debug.Log(log);
     }
 
-    public async UniTask UpdateUserData()
+    public async UniTask UpdateUserData()// ユーザーデータを更新
     {
         var request = new UpdateUserDataRequest()
         {
