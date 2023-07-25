@@ -7,30 +7,36 @@ using Cysharp.Threading.Tasks;
 
 public class PlayfabLogin : MonoBehaviour
 {
-    public async UniTask GetUserData()// ユーザーデータを取得
+    public bool WasLogin => _wasLogin;
+
+    [SerializeField]
+    private string _debugId;
+
+    private bool _wasLogin = false;
+
+    private void Awake()
     {
-        var request = new GetUserDataRequest();
-        var result = await PlayFabClientAPI.GetUserDataAsync(request);
-        var log = result.Error is null ? result.Result.Data["Name"].Value
-            : result.Error.GenerateErrorReport();
-        Debug.Log(log);
+        CustomIDLogin().Forget();
     }
 
-    public async UniTask UpdateUserData()// ユーザーデータを更新
+    private async UniTask CustomIDLogin()
     {
-        var request = new UpdateUserDataRequest()
+        // タイトルIDを入れる
+        PlayFabSettings.staticSettings.TitleId = "1936E";
+        var request = new LoginWithCustomIDRequest
         {
-            Data = new Dictionary<string, string>
-            {
-                { "Name", "Change" }
-            }
+            // カスタムIDを設定
+            CustomId = _debugId + SystemInfo.deviceUniqueIdentifier,
+            CreateAccount = true
         };
+        // 非同期でログイン
+        var result = await PlayFabClientAPI.LoginWithCustomIDAsync(request);
 
-        var result = await PlayFabClientAPI.UpdateUserDataAsync(request);
+        _wasLogin = result.Error is null;
 
-        if(result.Error is null)
-        {
-            await GetUserData();
-        }
+        // ログインしたかログを出す
+        var log = _wasLogin ? result.Result.PlayFabId
+            : result.Error.ErrorMessage;
+        Debug.Log(log);
     }
 }
