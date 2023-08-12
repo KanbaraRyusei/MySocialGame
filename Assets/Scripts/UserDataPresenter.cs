@@ -19,7 +19,11 @@ public class UserDataPresenter : MonoBehaviour
     {
         await UniTask.WaitUntil(() => _pl.WasLogin);
 
-        _view.ObserveEveryValueChanged(x => x.)
-            .Subscribe(x => );
+        await _model.Init();
+
+        Debug.Log(111);
+
+        //_view.ObserveEveryValueChanged(x => x.)
+            //.Subscribe(x => );
     }
 }

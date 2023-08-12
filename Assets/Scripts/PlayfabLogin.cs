@@ -16,6 +16,7 @@ public class PlayfabLogin : MonoBehaviour
 
     private void Awake()
     {
+        // UniTask‚ð“Š‚°‚é
         CustomIDLogin().Forget();
     }
 

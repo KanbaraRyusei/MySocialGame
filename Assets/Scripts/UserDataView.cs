@@ -6,6 +6,8 @@ using TMPro;
 
 public class UserDataView : MonoBehaviour
 {
+    public string InputField => _inputField.name;
+
     [SerializeField]
     private Button _button;
 
