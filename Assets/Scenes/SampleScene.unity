@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 1493990052}
   - component: {fileID: 1493990051}
   - component: {fileID: 1493990055}
+  - component: {fileID: 1493990056}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -877,6 +878,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 229920868}
   _inputField: {fileID: 1227069554}
+--- !u!114 &1493990056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493990050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53959a9929a15c74e8cba4c6b611a903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gachaButton: {fileID: 0}
+  _text: {fileID: 0}
 --- !u!1 &1568052342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 0}
-  _model: {fileID: 0}
+  _model: {fileID: 1835620524}
 --- !u!114 &1835620524
 MonoBehaviour:
   m_ObjectHideFlags: 0
