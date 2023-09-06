@@ -1448,8 +1448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53959a9929a15c74e8cba4c6b611a903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gachaButton: {fileID: 0}
-  _text: {fileID: 0}
+  _gachaButton: {fileID: 1960542956}
+  _text: {fileID: 749352335}
 --- !u!1 &1494333494
 GameObject:
   m_ObjectHideFlags: 0
