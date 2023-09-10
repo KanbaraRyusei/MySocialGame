@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 156024968}
   - component: {fileID: 156024970}
   - component: {fileID: 156024969}
+  - component: {fileID: 156024971}
   m_Layer: 5
   m_Name: Gacha
   m_TagString: Untagged
@@ -269,6 +270,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156024967}
   m_CullTransparentMesh: 1
+--- !u!114 &156024971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156024967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53959a9929a15c74e8cba4c6b611a903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gachaButton: {fileID: 1960542956}
+  _text: {fileID: 749352335}
 --- !u!1 &229920866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,8 +1345,6 @@ GameObject:
   - component: {fileID: 1493990053}
   - component: {fileID: 1493990052}
   - component: {fileID: 1493990051}
-  - component: {fileID: 1493990055}
-  - component: {fileID: 1493990056}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1422,34 +1435,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1493990055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493990050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c30d7a36e3662f84fb8f9585eb0a17f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 229920868}
-  _inputField: {fileID: 1227069554}
---- !u!114 &1493990056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493990050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53959a9929a15c74e8cba4c6b611a903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gachaButton: {fileID: 1960542956}
-  _text: {fileID: 749352335}
 --- !u!1 &1494333494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pl: {fileID: 1835620519}
   _model: {fileID: 1835620521}
-  _view: {fileID: 1493990055}
+  _view: {fileID: 0}
 --- !u!114 &1835620523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,7 +1990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7273b555dbee8d642b20bd0a845cb715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _view: {fileID: 1493990056}
+  _view: {fileID: 0}
   _model: {fileID: 1835620524}
 --- !u!114 &1835620524
 MonoBehaviour:
