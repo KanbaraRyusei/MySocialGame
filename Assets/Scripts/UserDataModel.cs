@@ -5,7 +5,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using Cysharp.Threading.Tasks;
 
-public class UserDataModel : MonoBehaviour
+public class UserDataModel
 {
     public async UniTask Init()
     {

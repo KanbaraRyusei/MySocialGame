@@ -6,7 +6,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using System.Linq;
 
-public class GachaModel : MonoBehaviour
+public class GachaModel
 {
     public async UniTask<string> DrawGachaAndGetResultName()
     {
