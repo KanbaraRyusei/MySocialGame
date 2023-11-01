@@ -10,18 +10,17 @@ public class UserDataPresenter : MonoBehaviour
     private PlayfabLogin _pl;
 
     [SerializeField]
-    private UserDataModel _model;
-
-    [SerializeField]
     private UserDataView _view;
+
+    private UserDataModel _model;
 
     private async void Start()
     {
+        _model = new UserDataModel();
+
         await UniTask.WaitUntil(() => _pl.WasLogin);
 
         await _model.Init();
-
-        Debug.Log(111);
 
         //_view.ObserveEveryValueChanged(x => x.)
             //.Subscribe(x => );

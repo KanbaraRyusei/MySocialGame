@@ -7,11 +7,11 @@ public class GachaPresenter : MonoBehaviour
     [SerializeField]
     private GachaView _view;
 
-    [SerializeField]
     private GachaModel _model;
 
-    private void Start()
+    private void Awake()
     {
+        _model = new GachaModel();
         _view.OnClickGachaButtonDelegate += _model.DrawGachaAndGetResultName;
     }
 }
