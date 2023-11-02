@@ -10,11 +10,14 @@ public class GachaModel
 {
     public async UniTask<string> DrawGachaAndGetResultName()
     {
+        // ガチャのリクエストの編集ページ
+        // https://developer.playfab.com/ja-JP/1936E/economy/catalogs/Q2hhcmFjdGVyMDE%253d/bundles/YnVuZGxlLWdhY2hhMDE%253d/edit
+
         var request = new PurchaseItemRequest
         {
             StoreId = "GachaStore",
-            ItemId = "bundle-gacha",
-            VirtualCurrency = "MS",
+            ItemId = "bundle-gacha01",
+            VirtualCurrency = "DD",
             Price = 1
         };
 

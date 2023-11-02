@@ -22,7 +22,7 @@ public class UserDataPresenter : MonoBehaviour
 
         await _model.Init();
 
-        //_view.ObserveEveryValueChanged(x => x.)
-            //.Subscribe(x => );
+        _view.ObserveEveryValueChanged(x => x.InputField)
+            .Subscribe(x => _model.UpdateDisplayName(x));
     }
 }
