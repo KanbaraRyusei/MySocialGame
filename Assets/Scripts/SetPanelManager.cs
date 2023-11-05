@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetPanelManager : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] _panels;
+    private Panel[] _panels;
 
 
 }
