@@ -37,6 +37,15 @@ public class SetPanelManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 指定したパネルを非表示にする関数
+    /// </summary>
+    /// <param name="id"></param>
+    public void DisablePanel(int id)
+    {
+        GetPanelById(id).gameObject.SetActive(false);
+    }
+
+    /// <summary>
     /// パネルをIDで検索する
     /// </summary>
     /// <param name="id"></param>
