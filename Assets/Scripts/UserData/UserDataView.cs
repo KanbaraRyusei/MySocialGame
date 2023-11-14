@@ -14,6 +14,12 @@ public class UserDataView : MonoBehaviour
     [SerializeField]
     private TMP_InputField _inputField;
 
+    [SerializeField]
+    private SetPanelManager _spm;
+
+    [SerializeField]
+    private int _nextId;
+
     public void Init()
     {
         _button.onClick.AddListener(OnClick);
@@ -21,6 +27,6 @@ public class UserDataView : MonoBehaviour
 
     private void OnClick()
     {
-
+        _spm.ChangePanel(_nextId);
     }
 }
