@@ -17,10 +17,10 @@ public class TitleView : MonoBehaviour
 
     private void Start()
     {
-        _titleButton.onClick.AddListener(OnClickGachaButton);
+        _titleButton.onClick.AddListener(OnClickTitleButton);
     }
 
-    private async void OnClickGachaButton()
+    private async void OnClickTitleButton()
     {
         var result = await OnClickTitleButtonDelegate.Invoke();
 
